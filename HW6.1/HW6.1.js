@@ -47,8 +47,19 @@ const array = [
     top_rated_film: "Далласский клуб покупателей",
   },
 ];
+function getAll() {
+  let directors = "";
+  for (let item of array) {
+    directors += `<h1>${array.indexOf(item) + 1}. ${item.name}</h1>
+  <div class="career">Карьера: ${item.career}</div>
+  <div class="films">Ссылка на фильмографию: ${item.films}</div>
+  <div class="topFilm">Лучший фильм: ${item.top_rated_film}</div>`;
+  }
+  document.querySelector("div.result").innerHTML = directors;
+}
+getAll();
 
-// Создание списка фильмов
+/*// Создание списка фильмов
 array.forEach(function (item) {
   let name = document.createElement("h1");
   name.textContent = `${array.indexOf(item) + 1}. ${item.name}`;
@@ -68,7 +79,7 @@ array.forEach(function (item) {
   topFilm.className = "topFilm";
   topFilm.textContent = `Лучший фильм: ${item.top_rated_film}`;
   resultDiv.appendChild(topFilm);
-});
+});*/
 
 //создание массива топовых фильмов
 const topFilmsList = array.map(function (item) {
